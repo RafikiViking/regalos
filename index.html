@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Feliz Cumpleaños 🤍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1b1633, #0d0b1f);
+  font-family: 'Playfair Display', serif;
+  color: #f2e9f1;
+  overflow-x: hidden;
+}
+
+/* ===== ESTRELLAS ===== */
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%,100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* ===== CONTENEDOR ===== */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+/* ===== SOBRE ===== */
+.envelope {
+  width: 340px;
+  height: 220px;
+  background: #3a2a4f;
+  border-radius: 16px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+.flap {
+  position: absolute;
+  inset: 0;
+  background: #52306b;
+  clip-path: polygon(0 0, 100% 0, 50% 55%);
+  transform-origin: top;
+  transition: transform 1s;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.label {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #f3b6c6;
+}
+
+/* ===== CARTA ===== */
+.card {
+  display: none;
+  max-width: 900px;
+  width: 100%;
+  background: linear-gradient(180deg, #1e1b33, #141228);
+  padding: 3rem 2.5rem;
+  border-radius: 32px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.7);
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  text-align: center;
+  font-size: 3.3rem;
+  color: #f3b6c6;
+  margin-bottom: 1rem;
+}
+
+/* ===== TULIPANES ===== */
+.tulips {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.tulips span {
+  display: inline-block;
+  animation: sway 4s ease-in-out infinite;
+}
+
+.tulips span:nth-child(even) {
+  animation-delay: 1.2s;
+}
+
+@keyframes sway {
+  0%,100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+/* ===== TEXTO ===== */
+.content p {
+  font-size: 1.15rem;
+  line-height: 2;
+  margin-bottom: 1.6rem;
+  text-align: justify;
+}
+
+/* ===== FIRMA ===== */
+.signature {
+  margin-top: 3rem;
+  text-align: right;
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+/* ===== CORAZONES ===== */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 1.4rem;
+  color: #f3b6c6;
+  animation: floatUp 12s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0) scale(0.7); opacity: 0; }
+  50% { opacity: 0.9; }
+  to { transform: translateY(-130vh) scale(1.2); opacity: 0; }
+}
+
+/* ===== BOTÓN ===== */
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #f3b6c6;
+  color: #1b1633;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  h1 { font-size: 2.4rem; }
+  .content p { font-size: 1rem; }
+  .card { padding: 2rem 1.4rem; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+<div class="wrapper">
+  <div class="envelope" onclick="openLetter()">
+    <div class="flap"></div>
+    <div class="label">Para ti 💖</div>
+  </div>
+
+  <div class="card" id="card">
+    <div class="tulips">
+      <span>🌷</span><span>🌷</span><span>🌷</span><span>🌷</span><span>🌷</span>
+    </div>
+
+    <h1>Feliz cumpleaños, amor ❤️</h1>
+
+    <div class="content">
+      <p>
+        Hay encuentros que no hacen ruido,
+        pero lo cambian todo.
+        Yo no estaba buscando quedarme,
+        y aun así llegaste tú,
+        caminando despacio,
+        como si supieras exactamente dónde tocar.
+      </p>
+
+      <p>
+        No hizo falta tiempo,
+        hizo falta tu risa,
+        tu forma suave de insistir,
+        esos gestos pequeños
+        que se quedaron viviendo en mí
+        incluso antes de que yo lo notara.
+      </p>
+
+      <p>
+        Me gusta lo nuestro
+        porque no pidió permiso,
+        porque nació sin promesas
+        y aun así se siente sincero.
+        Me gusta que hayas sido valiente,
+        que dieras el primer paso,
+        y que sin darte cuenta
+        te volvieras imprescindible.
+      </p>
+
+      <p>
+        Hoy celebro tu vida,
+        la luz que traes incluso en mis noches,
+        y esta casualidad tan bonita
+        de haberte encontrado.
+        Si la vida me deja,
+        prometo quedarme,
+        seguir eligiéndote,
+        y dejarme conquistar un poco más cada día.
+      </p>
+    </div>
+
+    <div class="signature">
+      Feliz cumpleaños 💕<br>
+      <strong>Naxo</strong>
+    </div>
+  </div>
+</div>
+
+<audio id="music" loop>
+  <source src="musica.mp3">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">🎵 Música</button>
+
+<script>
+/* ESTRELLAS */
+const stars = document.getElementById('stars');
+for (let i = 0; i < 80; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  const size = Math.random() * 2 + 1;
+  star.style.width = size + 'px';
+  star.style.height = size + 'px';
+  star.style.top = Math.random() * 100 + '%';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.animationDelay = Math.random() * 3 + 's';
+  stars.appendChild(star);
+}
+
+/* ABRIR CARTA */
+function openLetter() {
+  document.querySelector('.envelope').classList.add('open');
+  setTimeout(() => {
+    document.querySelector('.envelope').style.display = 'none';
+    document.getElementById('card').style.display = 'block';
+    document.getElementById('music').play();
+    hearts();
+  }, 900);
+}
+
+/* CORAZONES */
+function hearts() {
+  setInterval(() => {
+    const h = document.createElement('div');
+    h.className = 'heart';
+    h.innerHTML = '🤍';
+    h.style.left = Math.random() * 100 + 'vw';
+    document.body.appendChild(h);
+    setTimeout(() => h.remove(), 14000);
+  }, 800);
+}
+
+function toggleMusic() {
+  const m = document.getElementById('music');
+  m.paused ? m.play() : m.pause();
+}
+</script>
+
+</body>
+</html>
